@@ -1,17 +1,1 @@
-package com.example.demo.config;
-
-import ca.uhn.fhir.jpa.util.ISequenceValueMassager;
-import org.checkerframework.checker.initialization.qual.Initialized;
-import org.checkerframework.checker.nullness.qual.NonNull;
-import org.checkerframework.checker.nullness.qual.UnknownKeyFor;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.service.spi.ServiceContributor;
-
-public class HapiServiceContributor implements ServiceContributor {
-
-    @Override
-    public void contribute(@UnknownKeyFor @NonNull @Initialized StandardServiceRegistryBuilder standardServiceRegistryBuilder) {
-        standardServiceRegistryBuilder.addService(ISequenceValueMassager.class, new ISequenceValueMassager.NoopSequenceValueMassager());
-
-    }
-}
+package com.example.demo.config;import ca.uhn.fhir.jpa.util.ISequenceValueMassager;import org.checkerframework.checker.initialization.qual.Initialized;import org.checkerframework.checker.nullness.qual.NonNull;import org.checkerframework.checker.nullness.qual.UnknownKeyFor;import org.hibernate.boot.registry.StandardServiceRegistryBuilder;import org.hibernate.service.spi.ServiceContributor;public class HapiServiceContributor implements ServiceContributor {    @Override    public void contribute(@UnknownKeyFor @NonNull @Initialized StandardServiceRegistryBuilder standardServiceRegistryBuilder) {        standardServiceRegistryBuilder.addService(ISequenceValueMassager.class, new ISequenceValueMassager.NoopSequenceValueMassager());    }}
